@@ -18,6 +18,12 @@ class Program
             
             Console.WriteLine("Do you want to play again? (y/n)");
             string key = Console.ReadLine().ToLower();
+
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                Console.WriteLine("Invalid choice, exiting game");
+                return;
+            }
             
             if(key == "n")
             {
@@ -26,7 +32,7 @@ class Program
             }
             else if (key != "y")
             {
-                Console.WriteLine("Invalid choice. Try again");
+                Console.WriteLine("Invalid choice, exiting game...");
                 break;
             }
             
